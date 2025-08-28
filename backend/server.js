@@ -11,7 +11,7 @@ app.use(express.json()) // to enable app to send JSON data/to be used after app 
 const cors = require("cors");
 
 app.use(cors({
-  origin: "https://mern-todo-axios-frontend.onrender.com",
+  origin: "https://asbendra-todo-app-frontend.onrender.com",
   methods: ["GET", "POST", "PUT", "DELETE","PATCH"],
   allowedHeaders: ["Content-Type"],
   credentials: true
