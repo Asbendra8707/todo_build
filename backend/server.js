@@ -19,9 +19,9 @@ app.use(cors({
 
 // app.use(express.static(path.join(__dirname,'dist')))
 const { connectDB } = require('./database/dbConnection')
-app.get('/',(req, res)=>{
-    res.sendFile(path.join(__dirname,'dist/index.html'))
-})
+// app.get('/',(req, res)=>{
+//     res.sendFile(path.join(__dirname,'dist/index.html'))
+// })
 
 app.get('/health', (req, res) => {
     res.status(200).send('OK');
