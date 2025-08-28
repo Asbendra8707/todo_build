@@ -29,7 +29,7 @@ app.get('/health', (req, res) => {
 
 app.use('/api', userRouter);
 
-cron.schedule('*/10 * * * *', async () => {
+cron.schedule('*/10 3-16 * * *', async () => {
     try {
       const res = await axios.get('https://asbendra-todo-app.onrender.com/health');
       console.log(`Self-ping success: ${res.status}`);
