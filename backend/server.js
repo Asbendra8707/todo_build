@@ -7,7 +7,17 @@ const app= express() //Initialize express
 const path=require('path')
 const userRouter = require('./routes/route')
 app.use(express.json()) // to enable app to send JSON data/to be used after app creation
-app.use(express.static(path.join(__dirname,'dist')))
+
+const cors = require("cors");
+
+app.use(cors({
+  origin: "https://mern-todo-axios-frontend.onrender.com",
+  methods: ["GET", "POST", "PUT", "DELETE","PATCH"],
+  allowedHeaders: ["Content-Type"],
+  credentials: true
+}));
+
+// app.use(express.static(path.join(__dirname,'dist')))
 const { connectDB } = require('./database/dbConnection')
 app.get('/',(req, res)=>{
     res.sendFile(path.join(__dirname,'dist/index.html'))

@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     const getToDos = async () => {
       try {
-        const response = await fetch('/api/todo');
+        const response = await fetch('https://mern-todo-axios-backend.onrender.com/api/todo');
         if (!response.ok) throw new Error("Failed to fetch");
         const json = await response.json();
         setToDos(json);
@@ -27,7 +27,7 @@ function App() {
   const createToDo = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('/api/todo', {
+      const res = await fetch('https://mern-todo-axios-backend.onrender.com/api/todo', {
         method: "POST",
         body: JSON.stringify({ task: content }),
         headers: {

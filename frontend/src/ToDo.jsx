@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 
 function ToDo({ todo, setToDos }) {
   const updateToDo = async (todoId, todoStatus) => {
-    const res = await fetch(`/api/todo/${todoId}`, {
+    const res = await fetch(`https://mern-todo-axios-backend.onrender.com/api/todo/${todoId}`, {
       method: "PUT",
       body: JSON.stringify({ status: todoStatus }),
       headers: {
@@ -29,7 +29,7 @@ function ToDo({ todo, setToDos }) {
   }
   //Delete operation
   const deleteToDo = async (todoId) => {
-    const res = await fetch(`/api/todo/${todoId}`, {
+    const res = await fetch(`https://mern-todo-axios-backend.onrender.com/api/todo/${todoId}`, {
       method: "DELETE"
     });
     const data = await res.json();
